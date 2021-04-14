@@ -1,76 +1,80 @@
-'use strict';
+const Sequelize = require('sequelize');
 
-module.exports = {
-    up: async (queryInterface, Sequelize) => {
-        return queryInterface.createTable('Books', {
+module.exports = (sequelize) => {
+    return sequelize.define(
+        'book',
+        {
             id: {
-                type: Sequelize.INT,
+                type: Sequelize.INTEGER,
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
             },
-            Title: {
+            title: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            Creator: {
+            creator: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            Subject: {
+            subject: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            Description: {
-                type: Sequelize.STRING(500),
+            description: {
+                type: Sequelize.STRING(5000),
                 allowNull: true,
             },
-            Publisher: {
+            publisher: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            Contributor: {
+            contributor: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            TypeCover: {
+            typeCover: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            Date: {
+            date: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            Type: {
+            type: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            Format: {
+            format: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            CountPages: {
+            countPages: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            Identifier: {
+            identifier: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            Language: {
+            language: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
             },
-            Coverage: {
+            coverage: {
                 type: Sequelize.STRING(200),
                 allowNull: true,
+            },
+            coutInstance: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
             },
             createdAt: Sequelize.DATE,
             updatedAt: Sequelize.DATE,
-        });
-    },
-
-    down: async (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('Books');
-    },
+        },
+        {
+            freezeTableName: true,
+        }
+    );
 };
