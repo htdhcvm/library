@@ -36,6 +36,9 @@ const getBooksOnDisciplines = (list) => {
     return { type: 'library/getBooksOnDisciplines', payload: list };
 };
 
+const caculate = (calcData) => {
+    return { type: 'library/caculate', payload: calcData };
+};
 const initialState = {
     isAuth: false,
     login: '',
@@ -45,10 +48,17 @@ const initialState = {
     book: {
         learn: true,
     },
+    dataCalc: [],
 };
 
 export default function libraryReducer(state = initialState, action) {
     switch (action.type) {
+        case 'library/caculate': {
+            return {
+                ...state,
+                dataCalc: [...action.payload],
+            };
+        }
         case 'library/logout': {
             return {
                 ...state,
@@ -224,4 +234,11 @@ export function requestMarkLearn(idBook) {
 
         if (responseServer.status === 200) dispatch(markLearn());
     };
+}
+
+export async function requestCalculate(dispatch, useState) {
+    const responseServer = await axiosWithCredentials.get(`/api/calculate`);
+
+    console.log(responseServer);
+    if (responseServer.status === 200) dispatch(caculate(responseServer.data));
 }

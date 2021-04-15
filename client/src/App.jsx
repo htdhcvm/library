@@ -11,6 +11,7 @@ import Discipline from './components/Discipline/Discipline';
 import NotMatch from './components/NotMatch/NotMatch';
 import CheckOnAccess from './components/CheckOnAccess/CheckOnAccess';
 import CheckAuth from './components/CheckAuth/CheckAuth';
+import Calculations from './components/Calculations/Calculations';
 
 const App = () => {
     return (
@@ -31,6 +32,10 @@ const App = () => {
                 <CheckAuth path="/" exact>
                     <SignIn />
                 </CheckAuth>
+                <Route path="/calculations">
+                    <Calculations />
+                </Route>
+
                 <Route path="*">
                     <NotMatch />
                 </Route>

@@ -100,6 +100,7 @@ class Repository {
     async getAllBooksWithDispipiline() {
         const responseDb = await this.book.findAll({
             limit: 50,
+            order: ['id'],
             include: {
                 model: this.dicipline_has_book,
                 include: {
@@ -150,43 +151,7 @@ class Repository {
         });
     }
 
-    async markAsLearn(idBook, idUser) {
-        const responseDb = await this.reader_has_book.findAll({
-            where: {
-                readerId: idUser,
-                bookId: idBook,
-            },
-        });
-
-        if (responseDb.length === 0) {
-            await this.reader_has_book.create({
-                statusRead: true,
-                readerId: idUser,
-                bookId: idBook,
-            });
-            return true;
-        }
-
-        if (!responseDb[0].dataValues.statusRead) {
-            await this.reader_has_book.update(
-                {
-                    statusRead: true,
-                },
-                {
-                    where: {
-                        readerId: idUser,
-                        bookId: idBook,
-                    },
-                }
-            );
-            return true;
-        }
-
-        return false;
-    }
-
     async getBookWithDisipline(id, idUser) {
-        console.log(id, idUser);
         const responseDb = await this.book.findOne({
             where: {
                 id,
@@ -211,6 +176,101 @@ class Repository {
         return new BookHasDisiplineDTO({
             ...mapperToBookHasDisipline(responseDb, responseDbReaderHasBook),
         });
+    }
+
+    async getDiciplinesWithCountBook(disiplines) {
+        for (const iterator of disiplines) {
+            const count = await this.dicipline_has_book.findAndCountAll({
+                where: {
+                    disciplineId: iterator.id,
+                },
+            });
+            iterator.n = count.count;
+        }
+
+        return disiplines;
+    }
+
+    async getStudensOnDiscipline(disiplines) {
+        for (const iterator of disiplines) {
+            const count = await this.reader_has_discipline.findAndCountAll({
+                where: {
+                    disciplineId: iterator.id,
+                },
+            });
+            iterator.qst = count.count;
+        }
+
+        return disiplines;
+    }
+
+    async getCountEkzemplarIzdaniy(disiplines) {
+        for (const iterator of disiplines) {
+            let tmp = 0;
+
+            const responseDb = await this.dicipline_has_book.findAll({
+                where: {
+                    disciplineId: iterator.id,
+                },
+                include: {
+                    model: this.book,
+                },
+            });
+            responseDb.forEach((d_h_B) => {
+                tmp += d_h_B.dataValues.book.coutInstance;
+            });
+
+            iterator.qyi = tmp;
+            // console.log('\n');
+        }
+    }
+
+    async markAsLearn(idBook, idUser) {
+        const responseDb = await this.reader_has_book.findAll({
+            where: {
+                readerId: idUser,
+                bookId: idBook,
+            },
+        });
+
+        const responseFindDiscipline = await this.dicipline_has_book.findOne({
+            where: {
+                bookId: idBook,
+            },
+        });
+
+        const disciplineId = responseFindDiscipline.dataValues.disciplineId;
+
+        if (responseDb.length === 0) {
+            await this.reader_has_book.create({
+                statusRead: true,
+                readerId: idUser,
+                bookId: idBook,
+            });
+            await this.reader_has_discipline.create({
+                disciplineId,
+                readerId: idUser,
+            });
+            return true;
+        }
+
+        if (!responseDb[0].dataValues.statusRead) {
+            await this.reader_has_book.update(
+                {
+                    statusRead: true,
+                },
+                {
+                    where: {
+                        readerId: idUser,
+                        bookId: idBook,
+                    },
+                }
+            );
+
+            return true;
+        }
+
+        return false;
     }
 }
 

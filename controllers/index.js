@@ -173,6 +173,54 @@ class Controller {
             res.sendStatus(500);
         }
     }
+
+    async calculate(req, res) {
+        try {
+            // список всех дисциплин
+            const disiplines = await this.service.getAllDiciplines();
+
+            // количество наименований по дисциплине
+
+            await this.service.getDiciplinesWithCountBook(disiplines);
+
+            // console.log(disicplineWithNames);
+            // количество студентов по дисциплине
+
+            await this.service.getStudensOnDiscipline(disiplines);
+            // {
+            //  name : 'алгоритмы',
+            //  n : 10,
+            // }
+
+            await this.service.getCountEkzemplarIzdaniy(disiplines);
+
+            let result = [];
+            for (const iterator of disiplines) {
+                if (iterator.qst != 0) {
+                    result.push({
+                        name: iterator.name,
+                        n: iterator.n,
+                        qst: iterator.qst,
+                        qyi: iterator.qyi,
+                    });
+                }
+            }
+
+            for (const iterator of result) {
+                console.log(iterator);
+                let tmp = 0;
+                for (let i = 0; i < iterator.n; i++) {
+                    tmp += iterator.qyi / iterator.qst;
+                }
+                iterator.res = tmp / iterator.n;
+            }
+
+            res.json(result);
+        } catch (error) {
+            console.log(error);
+            res.sendStatus(500);
+        }
+    }
 }
 
 module.exports = Controller;

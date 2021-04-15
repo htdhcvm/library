@@ -50,6 +50,17 @@ class Service {
     async getBooksOnDiciplines(id) {
         return await this.repository.getBooksOnDiciplines(id);
     }
+
+    async getDiciplinesWithCountBook(disiplines) {
+        return await this.repository.getDiciplinesWithCountBook(disiplines);
+    }
+
+    async getStudensOnDiscipline(disiplines) {
+        return await this.repository.getStudensOnDiscipline(disiplines);
+    }
+    async getCountEkzemplarIzdaniy(disiplines) {
+        return await this.repository.getCountEkzemplarIzdaniy(disiplines);
+    }
 }
 
 module.exports = Service;

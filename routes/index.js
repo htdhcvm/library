@@ -42,6 +42,7 @@ router.get(
     controller.getAllBooks.bind(controller)
 );
 router.get('/getBook/:id', checkOnAccess, controller.getBook.bind(controller));
+router.get('/calculate', controller.calculate.bind(controller));
 router.put('/markLearn', checkOnAccess, controller.markLearn.bind(controller));
 
 router.get('/getAllGroups', controller.getAllGroups.bind(controller));

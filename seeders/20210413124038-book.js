@@ -21,6 +21,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Мир',
                 coutInstance: 2,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
 
             {
@@ -42,6 +44,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Мир',
                 coutInstance: 4,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '3',
@@ -62,6 +66,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Мир',
                 coutInstance: 7,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '4',
@@ -80,6 +86,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 22,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '5',
@@ -99,6 +107,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Мир',
                 coutInstance: 25,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '6',
@@ -119,6 +129,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 12,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '7',
@@ -137,6 +149,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 45,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '8',
@@ -156,6 +170,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 2,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '9',
@@ -175,6 +191,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 29,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '10',
@@ -193,6 +211,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 24,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '11',
@@ -212,6 +232,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 22,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '12',
@@ -230,6 +252,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 25,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '13',
@@ -248,6 +272,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 2,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '14',
@@ -266,6 +292,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: null,
                 coutInstance: 98,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '15',
@@ -284,6 +312,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 102,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '16',
@@ -302,6 +332,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 202,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '17',
@@ -321,6 +353,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Мир',
                 coutInstance: 63,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '18',
@@ -339,6 +373,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 72,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '19',
@@ -358,6 +394,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Мир',
                 coutInstance: 52,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '20',
@@ -376,6 +414,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 24,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '21',
@@ -394,6 +434,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 36,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '22',
@@ -412,6 +454,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 27,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '23',
@@ -430,6 +474,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 46,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '24',
@@ -449,6 +495,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 2,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '25',
@@ -467,6 +515,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 34,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '26',
@@ -486,6 +536,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 48,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '27',
@@ -504,6 +556,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 37,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '28',
@@ -522,6 +576,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 201,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '29',
@@ -540,6 +596,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 22,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '30',
@@ -561,6 +619,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 24,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '31',
@@ -579,6 +639,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 41,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '32',
@@ -597,6 +659,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 73,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '33',
@@ -615,6 +679,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 48,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '34',
@@ -633,6 +699,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 72,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '35',
@@ -651,6 +719,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 39,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '36',
@@ -669,6 +739,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 62,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '37',
@@ -687,6 +759,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 37,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '38',
@@ -705,6 +779,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 64,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '39',
@@ -723,6 +799,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 52,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '40',
@@ -741,6 +819,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 102,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '41',
@@ -759,6 +839,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 132,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '42',
@@ -777,6 +859,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 142,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '43',
@@ -795,6 +879,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 139,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '44',
@@ -814,6 +900,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 159,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '45',
@@ -832,6 +920,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 172,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '46',
@@ -850,6 +940,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 164,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '47',
@@ -868,6 +960,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 172,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '48',
@@ -886,6 +980,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 184,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '49',
@@ -904,6 +1000,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 15,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
             {
                 id: '50',
@@ -922,6 +1020,8 @@ module.exports = {
                 language: 'ru-RU',
                 coverage: 'Россия',
                 coutInstance: 45,
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
         ]);
     },

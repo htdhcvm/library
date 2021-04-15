@@ -5,6 +5,8 @@ module.exports = {
         return queryInterface.bulkInsert('group', [
             {
                 name: 'БСБО-02-17',
+                createdAt: new Date(),
+                updatedAt: new Date(),
             },
         ]);
     },
