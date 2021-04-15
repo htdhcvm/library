@@ -7,7 +7,7 @@ class Controller {
 
     async login(req, res) {
         try {
-            const { login, password } = req.body;
+            const { login, password } = req.params;
 
             const exist = await this.service.checkOnExistUser(login);
 
@@ -112,9 +112,10 @@ class Controller {
     async getBook(req, res) {
         try {
             const { id } = req.params;
-
+            const idUser = req.session.userId;
             const bookWithDisipline = await this.service.getBookWithDisipline(
-                id
+                id,
+                idUser
             );
 
             console.log(bookWithDisipline);
@@ -129,11 +130,44 @@ class Controller {
     async markLearn(req, res) {
         try {
             const { idBook } = req.body;
+            const idUser = req.session.userId;
 
-            const resultMarkLearn = await this.service.markAsLearn(idBook);
+            const resultMarkLearn = await this.service.markAsLearn(
+                idBook,
+                idUser
+            );
 
             if (resultMarkLearn) return res.sendStatus(200);
             return res.sendStatus(400);
+        } catch (error) {
+            console.log(error);
+            res.sendStatus(500);
+        }
+    }
+
+    async getAllGroups(req, res) {
+        try {
+            res.json(await this.service.getAllGroups());
+        } catch (error) {
+            console.log(error);
+            res.sendStatus(500);
+        }
+    }
+
+    async getAllDiciplines(req, res) {
+        try {
+            res.json(await this.service.getAllDiciplines());
+        } catch (error) {
+            console.log(error);
+            res.sendStatus(500);
+        }
+    }
+
+    async getBooksOnDiciplines(req, res) {
+        try {
+            const { id } = req.params;
+
+            res.json(await this.service.getBooksOnDiciplines(id));
         } catch (error) {
             console.log(error);
             res.sendStatus(500);

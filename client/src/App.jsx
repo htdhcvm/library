@@ -10,6 +10,7 @@ import SignIn from './components/SignIn/SignIn';
 import Discipline from './components/Discipline/Discipline';
 import NotMatch from './components/NotMatch/NotMatch';
 import CheckOnAccess from './components/CheckOnAccess/CheckOnAccess';
+import CheckAuth from './components/CheckAuth/CheckAuth';
 
 const App = () => {
     return (
@@ -24,12 +25,12 @@ const App = () => {
                 <CheckOnAccess path="/home" exact>
                     <Main />
                 </CheckOnAccess>
-                <Route path="/registration">
+                <CheckAuth path="/registration">
                     <Registration />
-                </Route>
-                <Route path="/" exact>
+                </CheckAuth>
+                <CheckAuth path="/" exact>
                     <SignIn />
-                </Route>
+                </CheckAuth>
                 <Route path="*">
                     <NotMatch />
                 </Route>

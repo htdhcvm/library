@@ -17,6 +17,7 @@ class BookHasDisipline {
         coverage,
         coutInstance,
         nameDisipline,
+        learn,
     }) {
         this.id = id;
         this.title = title;
@@ -35,6 +36,7 @@ class BookHasDisipline {
         this.coverage = coverage;
         this.coutInstance = coutInstance;
         this.nameDisipline = nameDisipline;
+        this.learn = learn;
     }
 }
 

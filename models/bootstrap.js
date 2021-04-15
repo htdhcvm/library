@@ -6,6 +6,7 @@ const Discipline = require('./Entity/discipline');
 const Group = require('./Entity/group');
 const Reader = require('./Entity/reader');
 const Reader_has_discipline = require('./Entity/reader_has_discipline');
+const Reader_has_book = require('./Entity/reader_has_book');
 
 module.exports = () => {
     const book = Book(sequelize);
@@ -14,6 +15,7 @@ module.exports = () => {
     const discipline = Discipline(sequelize);
     const group = Group(sequelize);
     const reader = Reader(sequelize);
+    const reader_has_book = Reader_has_book(sequelize);
 
     group.hasMany(reader);
     reader.belongsTo(group);
@@ -30,6 +32,12 @@ module.exports = () => {
     book.hasMany(dicipline_has_book);
     dicipline_has_book.belongsTo(book);
 
+    reader.hasMany(reader_has_book);
+    reader_has_book.belongsTo(reader);
+
+    book.hasMany(reader_has_book);
+    reader_has_book.belongsTo(book);
+
     return {
         book,
         dicipline_has_book,
@@ -37,5 +45,6 @@ module.exports = () => {
         group,
         reader,
         reader_has_discipline,
+        reader_has_book,
     };
 };

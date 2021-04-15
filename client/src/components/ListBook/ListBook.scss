@@ -1,4 +1,4 @@
-.list {
+.ListBook {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 20px;
@@ -6,5 +6,6 @@
 
     .itemBook {
         max-width: 200px;
+        line-height: 21px;
     }
 }

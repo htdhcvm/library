@@ -1,4 +1,4 @@
-module.exports = (dataFromDb) => {
+module.exports = (dataFromDb, responseDbReaderHasBook) => {
     return {
         id: dataFromDb.dataValues.id,
         title: dataFromDb.dataValues.title,
@@ -19,5 +19,7 @@ module.exports = (dataFromDb) => {
         nameDisipline:
             dataFromDb.dataValues.dicipline_has_books[0].dataValues.discipline
                 .name,
+        learn: responseDbReaderHasBook === null ? false : true,
+        // dataFromDb.dataValues.reader_has_books.length === 0 ? false : true,
     };
 };

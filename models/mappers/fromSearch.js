@@ -3,6 +3,7 @@ const BookDTO = require('../dto/BookDTO');
 module.exports = (dataFromDb) => {
     return dataFromDb.map((book) => {
         let tmp = {};
+        tmp.id = book.dataValues.id;
         tmp.title = book.dataValues.title;
         tmp.creator = book.dataValues.creator;
 

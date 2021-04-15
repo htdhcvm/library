@@ -1,0 +1,28 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .homelink {
+        margin-right: 20px;
+    }
+    .login {
+        margin: 0px 20px;
+    }
+    .search-box {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 20px;
+        .MuiInputBase-root {
+            flex: 1;
+        }
+        .searchIcon {
+            cursor: pointer;
+        }
+    }
+
+    .logout {
+        cursor: pointer;
+    }
+}

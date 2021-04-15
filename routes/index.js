@@ -8,6 +8,7 @@ const {
     group,
     reader,
     reader_has_discipline,
+    reader_has_book,
 } = require('../models/bootstrap')();
 
 const Controller = require('../controllers/');
@@ -20,12 +21,14 @@ const repository = new Repository(
     discipline,
     group,
     reader,
-    reader_has_discipline
+    reader_has_discipline,
+    reader_has_book
 );
 const service = new Service(repository);
 const controller = new Controller(service);
 
-router.get('/login', controller.login.bind(controller));
+router.get('/login/:password/:login', controller.login.bind(controller));
+
 router.post('/registration', controller.registration.bind(controller));
 router.get('/logout', checkOnAccess, controller.logout.bind(controller));
 router.get(
@@ -41,4 +44,10 @@ router.get(
 router.get('/getBook/:id', checkOnAccess, controller.getBook.bind(controller));
 router.put('/markLearn', checkOnAccess, controller.markLearn.bind(controller));
 
+router.get('/getAllGroups', controller.getAllGroups.bind(controller));
+router.get('/getAllDiciplines', controller.getAllDiciplines.bind(controller));
+router.get(
+    '/getBooksOnDiciplines/:id',
+    controller.getBooksOnDiciplines.bind(controller)
+);
 module.exports = router;

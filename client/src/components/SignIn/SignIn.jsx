@@ -7,16 +7,21 @@ import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
+import { useDispatch } from 'react-redux';
+import { requestLogin } from '@features/libraryReducer';
+
 import './SignIn.scss';
 
 const SignIn = () => {
+    const dispatch = useDispatch();
+
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSignIn = (e) => {
         e.preventDefault();
         if ((login.trim().length > 0) & (password.trim().length > 0)) {
-            console.log(login, password);
+            dispatch(requestLogin(login, password));
         }
     };
     return (

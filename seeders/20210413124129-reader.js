@@ -56,7 +56,7 @@ module.exports = {
                 name: 'Сергей Шутов',
                 password: await getHash('9'),
                 groupId: 1,
-                login: 'serj',
+                login: 'serjSh',
             },
             {
                 name: 'Алан Тедеев',

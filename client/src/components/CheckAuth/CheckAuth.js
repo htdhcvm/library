@@ -9,7 +9,9 @@ const CheckOnAccess = ({ children, ...rest }) => {
     return (
         <Route
             {...rest}
-            render={({ location }) => (isAuth ? children : <Redirect to="/" />)}
+            render={({ location }) =>
+                isAuth ? <Redirect to="/home" /> : children
+            }
         />
     );
 };
