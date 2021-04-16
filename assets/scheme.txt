@@ -1,0 +1,77 @@
+Table reader {
+  id int PK
+  name varchar
+  login varchar
+  password varchar
+  groupId int
+}
+Table reader_has_discipline{
+  id int PK
+  disciplineId int
+  readerId int
+}
+Table discpiline {
+  id int PK
+  name varchar
+}
+Table discipline_has_book {
+  id int PK
+  statusRead boolean
+  disciplineId int
+  bookId int
+}
+Table book {
+  id int PK
+  Title varchar
+  Creator varchar
+  Subject varchar
+  Description varchar
+  Publisher varchar
+  Contributor varchar
+  TypeCover varchar
+  Date varchar
+  Type varchar
+  Format varchar
+  CountPages varchar
+  Identifier varchar
+  Language varchar
+  Coverage varchar
+}
+Table group {
+  id int PK
+  name varchar
+}
+Table reader_has_book {
+  id int PK
+  statusRead boolean
+  readerId varchar
+  bookId varchar
+}
+
+Ref { 
+  reader.id < reader_has_discipline.readerId
+}
+
+Ref { 
+  discpiline.id < reader_has_discipline.disciplineId
+}
+
+Ref { 
+  discpiline.id < discipline_has_book.disciplineId
+}
+
+Ref { 
+  book.id < discipline_has_book.bookId
+}
+
+Ref { 
+  reader.groupId > group.id
+}
+
+Ref { 
+  reader.id < reader_has_book.readerId
+}
+
+Ref { 
+  book.id < reader_has_book.bookId
+}
